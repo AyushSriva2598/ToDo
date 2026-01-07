@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <div class="container1 border">
+        <h1>Search Todos</h1>
+        <input type="text" id="searchTodo" placeholder="Search todos...">
+    </div> -->
+    <div class="container">
+        <h1>
+            Your Todos
+        </h1>
+        <form class="input" onsubmit="handleAddTodo(event)">
+            <input type="text" id="inputTodo" placeholder="Add a new task..." required>
+            <div class="deadline">
+                <input type="datetime-local" id="inputDeadline" required>
+                <button id="addBtn" type="submit"> Add </button>
+                <!-- <button id="editBtn"> save </button> -->
+            </div>
+        </form>
+        <p id="msg"></p>
+        <div class="buttons">
+            <button id="deleteMultiple" onclick="handleDeleteMultiple()">Delete</button>
+            <button id="markMultiple" onclick="handleMarkMultipleTodoDone()">Done</button>
+        </div>
+        <div class="todosContainer" id="todosContainer">
+            <div class="todo border">
+                <div class="upperTodo">
+                    <input type="checkbox" id="checkbox">
+                    <p>Lorem ipsum dolor giat totam quibusdam beatae nihil quae nostrum eaque, itaque amet non!</p>
+                    <img src="images/edit.png" alt="edit">
+                    <img src="images/trash.png" alt="trash" id="deletedsingle">
+                </div>
+                <div class="lowerTodo">
+                    <p>
+                        Due on: deadline
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="quote">
+            <p>
+                "Success is the sum of small efforts, repeated day in and day out." ~ Robert Collier
+            </p>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="dashboard">
+            <h1 onclick="getChart()" style="cursor: pointer;">
+                Dashboard
+            </h1>
+            <div class="dashDivs">
+                <div class="dashDone div" id="dashDone">
+                    <p>
+                        Done
+                    </p>
+                    <p id="doneTodo">
+
+                    </p>
+                </div>
+                <div class="dashAll div" id="dashAll">
+                    <p>
+                        All
+                    </p>
+                    <p id="allTodo">
+
+                    </p>
+                </div>
+                <div class="dashRest div" id="dashRest">
+                    <p>
+                        Pending
+                    </p>
+                    <p id="restTodo" id="restTodo">
+
+                    </p>
+                </div>
+                <div class="dashDue div" id="dashDue">
+                    <p>
+                        Overdue
+                    </p>
+                    <p id="dueTodo">
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="belowDashboard border" id='belowDashboard'
+            style="height:45%; border-radius: 20px; display: flex; align-items: center;">
+            <canvas id="canvas" class="" style="height:100%; border-radius: 20px; padding: 1vw; border: none"></canvas>
+        </div>
+
+        <!-- <div class="border" style="height: 45%; width: 100%; border-radius: 20px; padding: 2vw;">
+            <div class=""
+                style="height: 100%; width: 100%; display: flex; flex-direction: column; gap:1vw; overflow: scroll;">
+                <div class="head"
+                    style="display: flex; width: 100%; height: 12%; justify-content: space-between; margin-bottom: 0.7vw; align-items: center;">
+                    <h3 class=>Todo Description</h3>
+                    <button style="width: 10%; height: 100%; font-size: larger; border: none; background-color: transparent; color: white;
+            background-color: #4d4d4d;
+            border-radius: 5px;
+            font-size: large;">
+                        X
+                    </button>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate necessitatibus consectetur
+                    recusandae provident nihil quas asperiores soluta obcaecati a deleniti! Quisquam sapiente dolores
+                    epore? Ex dolorem quae doloribus exercitationem vitae eos laboriosam molestiae assumenda iure autem.
+                    Ex dolorem quae doloribus exercitationem vitae eos laboriosam molestiae assumenda iure autem
+                </p>
+                <p style="margin-top:auto;">
+                    Due on: Deadline
+                </p>
+            </div>
+        </div> -->
+
+    </div>
+    </div>
+    <script src="script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</body>
+
+</html>
